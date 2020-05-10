@@ -70,7 +70,6 @@ public class Admin {
   		        s+= (i+1) + " - " + a.name + "\n";
   	     }
   		 return s;
-  		 
     }
 
 }
