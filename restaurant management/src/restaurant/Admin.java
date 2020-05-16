@@ -72,4 +72,12 @@ public class Admin {
   		 return s;
     }
 
+  void delete(int id) {
+    	try {
+    	employeelist.remove(id);
+    	File a = file.get(id);
+    	a.delete();}
+    	catch(IndexOutOfBoundsException e) {
+    		System.err.println("can't do this operation");
+    	} 
 }
