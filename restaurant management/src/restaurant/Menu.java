@@ -28,4 +28,14 @@ public class Menu {
  	   }
  		 return menu1;  
     }
+    
+    //remove a meal from the menu
+   public void removeFood (int i) {
+	   food.remove(i-1);
+   }
+   
+ //remove a drink from the menu
+   public void removeDrink (int i) {
+	   drinks.remove(i-1);
+   }
 }
