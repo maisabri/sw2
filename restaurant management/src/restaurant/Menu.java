@@ -38,4 +38,16 @@ public class Menu {
    public void removeDrink (int i) {
 	   drinks.remove(i-1);
    }
+	
+	public void addFood(String name,double price) {
+	   food.add(new Item(name,"food",price));
+   }
+   
+  
+   public void addDrink(String name,double price) {
+	   drinks.add(new Item(name,"drinks",price));
+	   
+   }
+	
+	
 }
