@@ -35,5 +35,9 @@ public class Employee {
             }
          }
          
-         
+  void deleteCustomer(int id){
+        customerList.remove(id);
+        File x=file.get(id);
+        x.delete();
+        }
 }
