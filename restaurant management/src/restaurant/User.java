@@ -19,5 +19,11 @@ public class User {
     {
          return str1.equals( this.username ) && str2.equals( this.password ) ;
     }
+    
+    public int logout()
+    {
+        return 0;
+
+    }
 
 }
