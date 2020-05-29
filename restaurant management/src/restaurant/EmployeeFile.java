@@ -21,11 +21,9 @@ public class EmployeeFile {
 			return this.id;
 		}
 
-	    public void setId(int id) {
-			this.id = id;
-		}
+	    
 
-		public EmployeeFile(String name, int age, int workingHours, double salary) {
+	 public EmployeeFile(String name, int age, int workingHours, double salary) {
 			this.name=name;
 			this.workingHours=workingHours;
 			this.age=age;
