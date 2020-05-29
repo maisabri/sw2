@@ -35,9 +35,21 @@ public class Employee {
             }
          }
          
-  void deleteCustomer(int id){
+   void deleteCustomer(int id){
         customerList.remove(id);
         File x=file.get(id);
         x.delete();
         }
+	
+ String list()
+       {
+           String s=" ";
+           s+="Customers:  \n Name\t\t\t\t Id \n\n";
+           for(int v=0;v<customerList.size();v++)
+           {
+             Customer c=  customerList.get(v);
+             s+=(v+1) +" - "+c.toString()+" \t "+v+"\n";
+           }
+           return s;
+       }
 }
