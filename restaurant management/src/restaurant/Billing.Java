@@ -28,3 +28,26 @@ public class Billing {
     public void setMealCost(double mealCost) {
         this.mealCost = mealCost;
     }
+ public double getTax() {
+        return tax;
+    }
+
+    public void setTax(double tax) {
+        this.tax = tax;
+    }
+
+    public double getTip() {
+        return tip;
+    }
+
+    public void setTip(double tip) {
+        this.tip = tip;
+    }
+
+    public double getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
