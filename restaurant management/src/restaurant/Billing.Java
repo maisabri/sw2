@@ -48,6 +48,3 @@ public class Billing {
         return totalCost;
     }
 
-    public void setTotalCost(double totalCost) {
-        this.totalCost = totalCost;
-    }
