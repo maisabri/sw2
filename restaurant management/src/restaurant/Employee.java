@@ -37,15 +37,6 @@ public class Employee {
         
 	
 
-String searchCustomer(int id){
-            try{
-                Customer z=customerList.get(id);
-                return "The employee you are searching for is :"+z.toString()+id;
-            }catch(IndexOutOfBoundsException e){
-                return "can't find the customer";
-            }
-        }
-
 
 	
    void deleteCustomer(int id){
