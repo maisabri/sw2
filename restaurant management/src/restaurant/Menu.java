@@ -9,6 +9,29 @@ public class Menu {
     private final ArrayList<Item> food=new ArrayList<>();
     private final ArrayList<Item> drinks=new ArrayList<>();
 
+	
+       public void write_file_food(){
+       
+    String FNAME = "food.txt";
+  
+       try {
+    	    FileWriter fw=new FileWriter(FNAME); 
+    	   BufferedWriter bw = new BufferedWriter (fw);
+           food.add(new Item("Grilled Salmon With Sauce","food",200));
+           food.add(new Item("Roast Beef With Vegetables","food",150));
+           food.add(new Item("Chiken And Mushroom Pie","food",120));
+           food.add(new Item("Marrakesh Vegetarian Curry","food",100));
+           
+           for (Item line : food) {
+               bw.write (line +"");
+               bw.newLine();} 
+               bw.close();
+                }
+       catch(IOException e) {
+       	System.err.println("can't do this operation");
+       }
+   }
+	
     public String displayFood() {
  	   String menu1=" ";
  	   menu1+= "Food Menu : \n";
