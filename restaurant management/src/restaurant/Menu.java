@@ -49,5 +49,8 @@ public class Menu {
 	   
    }
 	
-	
+	public void updateFood(int i, String name1 , double price1) {
+	   Item a=new Item(name1,"food",price1);
+	   food.set(i-1, a);
+   }
 }
