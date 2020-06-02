@@ -1,9 +1,6 @@
 import java.util.Scanner;
 
-/**
- *
- * @author DELL LAPTOP
- */
+
 public class Offer {
 
 
@@ -23,6 +20,8 @@ public class Offer {
     {
     	Scanner read = new Scanner(System.in) ;
         System.out.println("enter price before discount : ") ;
+        oldprice = read.nextDouble() ;
+        read.close();
         newprice = oldprice - ( oldprice*disc/100 ) ;
         System.out.println( "the new price is :" + newprice ) ;
     }
