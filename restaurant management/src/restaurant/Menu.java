@@ -1,11 +1,11 @@
 package restaurant;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Menu {
+	
     private final ArrayList<Item> food=new ArrayList<>();
     private final ArrayList<Item> drinks=new ArrayList<>();
 
@@ -97,5 +97,23 @@ public class Menu {
 	   
    }
 	
+   public int searchFood(String name) {
+	  for(int i=0;i<food.size();i++) {
+		 Item a=food.get(i);
+		  if(name == null ? a.name == null : name.equals(a.name)) {
+			  return i+1;}
+		  }
+	  return 0;
+   }
+   
+   
+   public int searchDrink(String name) {
+	   for(int i=0;i<drinks.size();i++) {
+			 Item a=drinks.get(i);
+			  if(name == null ? a.name == null : name.equals(a.name)) {
+				  return i+1;}
+			  }
+		  return 0;
+   }
 	
 }
