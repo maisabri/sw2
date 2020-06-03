@@ -17,7 +17,13 @@ public class Order {
         order.clear() ;
     }
 	 //increament order num 
-    public void increamentNo()
+   
+
+	  public int getNumber()
+    {
+        return orderNum ;
+    }
+	public void increamentNo()
     {
         orderNum ++ ;
     }
