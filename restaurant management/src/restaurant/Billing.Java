@@ -47,3 +47,44 @@ public void setMealCost(double mealCost) {
     public double getTotalCost() {
         return totalCost;
     }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public double getTotalBill() {
+        return totalBill;
+    }
+
+    public void setTotalBill(double totalBill) {
+        this.totalBill = totalBill;
+    }
+    
+     public double tax(){
+            tax = 0.067 * mealCost;
+            return tax;
+     }
+     
+      public double tip(){
+        totalCost = mealCost + tax;
+        tip= 0.2 * totalCost;
+            return tip;
+      }
+    
+       public double totalBill(){
+        totalBill = totalCost + tip;
+            return totalBill;
+    }
+      
+       /*
+       public Double bill(){
+       System.out.println("Please Enter The Meal Cost : ");
+       mealCost = scan.nextDouble();
+       tax = 0.067 * mealCost;
+       totalCost = mealCost + tax;
+       tip= 0.2 * totalCost;
+       totalBill = totalCost + tip;
+       System.out.println("Meal Cost : $" + df.format(mealCost));
+       System.out.println("Tax :$" + df.format(tax));
+       System.out.println("Tip :$" + df.format(tip));
+       System.out.println("Total Bill :$" + df.format(totalBill));
