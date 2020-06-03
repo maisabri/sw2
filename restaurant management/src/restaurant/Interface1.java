@@ -23,7 +23,12 @@ public interface Interface1 {
 		 public String displayDrinks();
 		 public int searchFood(String name);
 		 public int searchDrink(String name);
-     
+                 public void discount();
+		 public void newprice();
+		 public double Fgetprice(int i);
+		 public double Dgetprice(int i);
+                 public void setMealCost(double mealCost);
+
      
      
 	}
