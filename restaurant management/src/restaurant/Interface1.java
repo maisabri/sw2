@@ -13,6 +13,16 @@ public interface Interface1 {
 		 public Menu getItem(int index);
 		 public void clearOrder();
 		 public int getSize();
+		 public int getNumber();
+		 public void increamentNo();
+		 public String toString();
+		 public double tax();
+		 public double tip();
+		 public double totalBill();
+		 public String displayFood();
+		 public String displayDrinks();
+		 public int searchFood(String name);
+		 public int searchDrink(String name);
      
      
      
