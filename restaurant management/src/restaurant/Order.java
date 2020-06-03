@@ -28,16 +28,6 @@ public class Order {
         orderNum ++ ;
     }
 	
-	  public String toString()
-    {
-        String str = " ";
-        for (int i=0;i<order.size();i++)
-        {
-            str +=order.get(i).toString()+"\n\n";
-        }
-        return str;
-    }
-}
-
+	
 }
 
