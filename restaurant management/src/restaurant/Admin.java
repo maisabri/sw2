@@ -80,4 +80,13 @@ public class Admin {
     	catch(IndexOutOfBoundsException e) {
     		System.err.println("can't do this operation");
     	} 
+	  
+	  String searchEmployee(int id) {
+
+    	try {
+    	      EmployeeFile a=employeelist.get(id);
+    	       return "the employee you're searching for is : "+a.name + "\n"+id;}
+    	catch(IndexOutOfBoundsException e) {
+    		 return "can't find the employee";}
+    }
 }
