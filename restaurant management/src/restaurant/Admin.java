@@ -62,7 +62,7 @@ public class Admin {
     	}
      }
 
-    String list () {
+    String listEmployee () {
     	 String s=" ";
     	 s+= "Employees : \n    Name \t\t\t ID \n\n";
   	     for(int i = 0 ; i<employeelist.size() ; i++) {
@@ -72,7 +72,7 @@ public class Admin {
   		 return s;
     }
 
-  void delete(int id) {
+  void deleteEmployee(int id) {
     	try {
     	employeelist.remove(id);
     	File a = file.get(id);
@@ -80,4 +80,22 @@ public class Admin {
     	catch(IndexOutOfBoundsException e) {
     		System.err.println("can't do this operation");
     	} 
+	  
+	  void updateEmployee(int id,String name,int age, int workinghours,double salary) {
+    	 try {
+    		 File a=new File("employee"+ id + ".txt");
+    	  Writer fileWriter= new FileWriter(a);
+  	    BufferedWriter pw= new BufferedWriter(fileWriter);
+  	    pw.write("employee's name : " + name +"\r\n" + "employee's ID : "+ i+"\r\n" +"employee's age : " + age  +"\r\n"+ "your work hours : "+ workinghours + "\r\n" + "your salary is : " + salary + "\r\n");
+   	      file.set(id,a);
+   	      pw.close();
+   	      EmployeeFile b=new EmployeeFile(name,age,workinghours,salary);
+   	      employeelist.set(id, b);
+    	 }
+    	  catch(IndexOutOfBoundsException e) {
+    		  System.err.println("can't find the employee");
+    	  } catch (IOException e) {
+    		  System.err.println("can't do this operation");
+		}
+     }
 }
