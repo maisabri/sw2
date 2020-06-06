@@ -115,5 +115,14 @@ public class Menu {
 			  }
 		  return 0;
    }
+	 public void updateFood(int i, String name1 , double price1) {
+	   Item a=new Item(name1,"food",price1);
+	   food.set(i-1, a);
+   }
+   
+   public void updateDrink(int i, String name1 , double price1) {
+	   Item a=new Item(name1,"drink",price1);
+	   food.set(i-1, a);
+   }
 	
 }
