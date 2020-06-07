@@ -5,10 +5,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 
-/**
- *
- * @author DELL LAPTOP
- */
+
 
 
 public class Employee extends User implements Interface1{
@@ -40,4 +37,49 @@ public class Employee extends User implements Interface1{
             {
                   System.err.println("error");
             }
+		
+		    //function delete customer and delete customer//
+     
+        
+        void deleteCustomer(int id){
+        customerList.remove(id);
+        File x=file.get(id);
+        x.delete();
+        }
+    
+        //--------------------end function-----------------------//
+        
+                         //function search//
+        
+        String searchCustomer(int id){
+            try{
+                Customer z=customerList.get(id);
+                return "The employee you are searching for is :"+z.toString()+id;
+            }catch(IndexOutOfBoundsException e){
+                return "can't find the customer";
+            }
+        }
+    
+        //-------------end search function------------//
+        
+        
+        
+                         //function update//
+      void updateCustomer(int ID_Customer,String Name_Customer) {
+    	 try {
+            File a=new File("employee"+ ID_Customer + ".txt");
+    	    Writer fileWriter= new FileWriter(a);
+                 try (BufferedWriter pw = new BufferedWriter(fileWriter)) {
+                     pw.write("Customer's name : " + Name_Customer +"\r\n" + "Customer ID : "+ i + "\r\n");
+                     file.set(ID_Customer,a);
+                 }         
+   	    Customer b=new Customer(Name_Customer);
+   	    customerList.set(ID_Customer, b);
+    	 }
+    	  catch(IndexOutOfBoundsException e) {
+    		  System.err.println("can't find the employee");
+    	  } catch (IOException e) {
+    		  System.err.println("can't do this operation");
+		}
+     }
          }
