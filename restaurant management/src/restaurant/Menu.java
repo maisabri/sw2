@@ -49,6 +49,44 @@ public class Menu {
 	   
    }
 	
-	
+	   //remove a meal from the menu
+   public void removeFood (int i) {
+	   food.remove(i-1);
+   }
+   
+ //remove a drink from the menu
+   public void removeDrink (int i) {
+	   drinks.remove(i-1);
+   }
+   
+   //search for a meal 
+   public int searchFood(String name) {
+	  for(int i=0;i<food.size();i++) {
+		 Item a=food.get(i);
+		  if(name == null ? a.name == null : name.equals(a.name)) {
+			  return i+1;}
+		  }
+	  return 0;
+   }
+   
+   //search for a drink
+   public int searchDrink(String name) {
+	   for(int i=0;i<drinks.size();i++) {
+			 Item a=drinks.get(i);
+			  if(name == null ? a.name == null : name.equals(a.name)) {
+				  return i+1;}
+			  }
+		  return 0;
+   }
+   
+   public void updateFood(int i, String name1 , double price1) {
+	   Item a=new Item(name1,"food",price1);
+	   food.set(i-1, a);
+   }
+   
+   public void updateDrink(int i, String name1 , double price1) {
+	   Item a=new Item(name1,"drink",price1);
+	   food.set(i-1, a);
+   }
    
 }
