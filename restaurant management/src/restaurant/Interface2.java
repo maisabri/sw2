@@ -1,11 +1,14 @@
-public interface Interface2 {
+public interface Interface1 {
    
-	interface forAdmin{
-		 public String displayFood();
-		 public String displayDrinks();
-		 public int searchFood(String name);
-		 public int searchDrink(String name);
-		 public void addFood(String name,double price);
-		 public void addDrink(String name,double price);
-     
-       }
+	interface forEmployee{
+		public void addOrder(Menu m);
+		 public void removeItem(Menu m);
+		 public Menu getItem(int index);
+		 public void clearOrder();
+		 public int getSize();
+		 public int getNumber();
+		 public void increamentNo();
+		 public String toString();
+		
+		
+	}
