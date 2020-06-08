@@ -82,4 +82,17 @@ public class Employee extends User implements Interface1{
     		  System.err.println("can't do this operation");
 		}
      }
+		
+  String listCustomer()
+       {
+           String s=" ";
+           s+="Customers:  \n Name\t\t\t\t Id \n\n";
+           for(int v=0;v<customerList.size();v++)
+           {
+             Customer c=  customerList.get(v);
+             s+=(v+1) +" - "+c.toString()+" \t "+v+"\n";
+           }
+           return s;
+       }
+
          }
