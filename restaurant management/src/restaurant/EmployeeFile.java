@@ -1,3 +1,4 @@
+package restaurant;
 public class EmployeeFile {
     
 	 String name ;
