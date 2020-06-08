@@ -1,3 +1,4 @@
+package restaurant;
 public class Customer{
      String name;
     
