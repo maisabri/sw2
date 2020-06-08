@@ -1,3 +1,5 @@
+package restaurant;
+import java.util.Scanner;
 public class Offer {
 
 
@@ -13,3 +15,16 @@ public class Offer {
         disc = read.nextDouble() ;
         read.close();
     }
+
+        public void newprice()
+    {
+    	Scanner read = new Scanner(System.in) ;
+        System.out.println("enter price before discount : ") ;
+        oldprice = read.nextDouble() ;
+        read.close();
+        newprice = oldprice - ( oldprice*disc/100 ) ;
+        System.out.println( "the new price is :" + newprice ) ;
+    }
+}
+
+
