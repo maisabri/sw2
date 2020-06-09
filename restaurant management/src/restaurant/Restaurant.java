@@ -1,14 +1,9 @@
 package restaurant;
 import javafx.application.Application;
-import static javafx.application.Application.STYLESHEET_CASPIAN;
-import static javafx.application.Application.launch;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
@@ -21,19 +16,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-
 public class Restauranttt extends Application {
     
     //Table view
-    
     Stage windowE;
     TableView<EmployeeFile> table;
     Stage windowC;
@@ -99,7 +90,6 @@ public class Restauranttt extends Application {
         
         table1.getColumns().addAll(name2Column, id2Column);
         
-      
         VBox vcBox = new VBox();
         vcBox.getChildren().addAll(table1);
     
@@ -126,7 +116,6 @@ public class Restauranttt extends Application {
  //___________________________________________________________________________________________________
         
          //bill
- 
          Billing bill = new Billing();
          Employee employee = new Employee();
        // Customer c =new Customer();
@@ -148,9 +137,7 @@ public class Restauranttt extends Application {
              String list() {
                  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
              }
-         };   
-           
-       
+         }; 
         root0.setAlignment(Pos.CENTER) ;
         root0.setVgap(20) ;
         root0.setHgap(0) ;
@@ -162,10 +149,7 @@ public class Restauranttt extends Application {
         root0.getChildren().add(holder);
 
         holder.setStyle("-fx-background-color: CADETBLUE");
-      
-        
-        
-        
+   
         GridPane root2 = new GridPane();
         root2.setAlignment(Pos.CENTER) ;
         root2.setVgap(10) ;
@@ -178,7 +162,6 @@ public class Restauranttt extends Application {
         TextField numm1 = new TextField();
         root2.add(numm1,4,1);
        
-        
         
         TextField numm2 = new TextField();
         root2.add(numm2,4,2);
@@ -194,8 +177,7 @@ public class Restauranttt extends Application {
         root2.add(numm4,4,4);
         numm4.setEditable(false);
         numm4.setMouseTransparent(true);
-       
-     
+      
         Label labelCost = new Label("MealCost :");
         labelCost.setFont(Font.font(STYLESHEET_CASPIAN, FontWeight.BOLD, FontPosture.REGULAR, 15));
         root2.add(labelCost,2,1);
@@ -209,8 +191,7 @@ public class Restauranttt extends Application {
         labeltotal.setFont(Font.font(STYLESHEET_CASPIAN, FontWeight.BOLD, FontPosture.REGULAR, 15));
         root2.add(labeltotal,2,4);
          
-        
-        
+ 
         Button addBtnn = new Button();
         Button exitBtn8 = new Button();
         addBtnn.setText("Calculate");
@@ -243,8 +224,6 @@ public class Restauranttt extends Application {
                
                 }
         });
-        
-     
       exitBtn8.setTextFill(Color.RED);
         exitBtn8.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -252,13 +231,12 @@ public class Restauranttt extends Application {
                   Platform.exit();
             }
         });
-         
-          
+  
         root2.setStyle("-fx-background-color:CADETBLUE");
         Scene scene11 = new Scene(root2, 500, 500);
         
         //__________________________________________________________________________________//     
-//menu
+       //menu
         GridPane gp = new GridPane();
         gp.setAlignment(Pos.CENTER) ;
         gp.setVgap(5) ;
@@ -275,8 +253,7 @@ public class Restauranttt extends Application {
         label1.setFont(Font.font(24));
         label1.setStyle("-fx-text-fill: BEIGE;");
         gp.add(label1,0,2);
-        
-        
+
         Label lel3 = new Label("PRICES$$") ;
         lel3.setFont(Font.font(24));
          lel3.setStyle("-fx-text-fill: BEIGE;");
@@ -308,8 +285,6 @@ public class Restauranttt extends Application {
                    order.names+="  "+"\r\n"+ b1.getText()  ;
                    field.setText(order.names);
             }});
-       
-        
         
         Button b2 = new Button();
         b2.setText("Roast Beef With Vegetables");
@@ -325,10 +300,7 @@ public class Restauranttt extends Application {
         Label l2 = new Label("100") ;
         l2.setFont(Font.font(24));
         gp.add(l2,3,3);
-        
-        
-        
-        
+       
         Button b3 = new Button();
         b3.setText("Chiken And Mushroom Pie");
          b3.setMinSize(200, 20);
@@ -358,8 +330,7 @@ public class Restauranttt extends Application {
         Label l4 = new Label("150") ;
         l4.setFont(Font.font(24));
         gp.add(l4,3,5);
-        
-        
+         
         
         Label label2 = new Label("DRINK:") ;
         label2.setFont(Font.font(24));
@@ -445,8 +416,7 @@ public class Restauranttt extends Application {
                   field.setText("");
             }
         });
-        
-               
+              
         Button cancel = new Button("Cancel Order") ;
         GridPane.setConstraints( cancel , 2, 20 ) ;
         cancel.setMinSize(100, 20);
@@ -459,8 +429,6 @@ public class Restauranttt extends Application {
                   primaryStage.show();
             }
         });
-        
-        
         
         Button exitBtn99 = new Button("Exit");
         GridPane.setConstraints( exitBtn99 , 3 , 20 ) ;
@@ -475,8 +443,7 @@ public class Restauranttt extends Application {
             }
         });
             
-            
-           
+
             //layout.setTop(menubar) ;
            gp.getChildren().add(exitBtn99);
            gp.getChildren().add(check);
@@ -498,3 +465,65 @@ public class Restauranttt extends Application {
          });
          gp.add(backbtn5, 3, 21);
          /////////////////////////////////////////
+      //search customer        
+     GridPane grid5 = new GridPane() ;
+        grid5.setAlignment(Pos.CENTER) ;
+        grid5.setVgap(10) ;
+        grid5.setHgap(10) ;
+          
+        Label cust_id = new Label("ID : ") ;
+        GridPane.setConstraints( cust_id , 2 , 2 ) ;
+        cust_id.setFont(Font.font("tahoms", FontWeight.SEMI_BOLD, FontPosture.REGULAR,15 ));
+        
+        TextField pp = new TextField() ;
+        pp.setPromptText("Write an ID Here...");
+        GridPane.setConstraints( pp , 3 , 2 ) ;
+        TextField ppp = new TextField() ;
+        ppp.setEditable(false);
+        ppp.setMouseTransparent(true);
+        GridPane.setConstraints( ppp , 3 , 3 ) ;
+        
+        
+        Button cust_del = new Button("Delete") ;
+        GridPane.setConstraints( cust_del , 4, 3 ) ;
+        cust_del.setMinSize(100, 20);
+        cust_del.setMaxSize(80, 40);
+        cust_del.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  pp.clear();
+                  ppp.clear();
+            }
+        });
+        
+        
+         Button cust_search = new Button("Search") ;
+        GridPane.setConstraints( cust_search , 4, 2 ) ;
+        cust_search.setMinSize(100, 20);
+        cust_search.setMaxSize(80, 40);
+        cust_search.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                String s="";
+                s=employee.search(Integer.parseInt(pp.getText()));
+                ppp.setText(s);
+            }
+        });
+        
+        Button exitBtn5 = new Button("Exit");
+        GridPane.setConstraints( exitBtn5 , 4 , 5 ) ;
+        exitBtn5.setMinSize(100, 20);
+        exitBtn5.setMaxSize(80, 40);
+        exitBtn5.setTextFill(Color.RED);
+        exitBtn5.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+            }
+        });
+       
+        grid5.getChildren().addAll(  cust_id , cust_del , exitBtn5 ,pp,cust_search,ppp);
+        grid5.setStyle("-fx-background-color:CADETBLUE");
+       Scene scene7 = new Scene( grid5 , 400 , 500 ) ;  
+ //////////////////////////////////////// 
+        
