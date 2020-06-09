@@ -29,10 +29,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-/**
- *
- * @author DELL LAPTOP
- */
+
 public class Restauranttt extends Application {
     
     //Table view
@@ -127,3 +124,136 @@ public class Restauranttt extends Application {
          GridPane root= new GridPane();
         Scene scene = new Scene(root, 500, 500);  
  //___________________________________________________________________________________________________
+        
+         //bill
+ 
+         Billing bill = new Billing();
+         Employee employee = new Employee();
+       // Customer c =new Customer();
+         Admin adminn = new Admin();
+         Order order =new Order();
+         Item item  ;
+         User user = new User("a","a") {
+             @Override
+             void delete(int id) {
+                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             }
+
+             @Override
+             String search(int id) {
+                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             }
+
+             @Override
+             String list() {
+                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             }
+         };   
+           
+       
+        root0.setAlignment(Pos.CENTER) ;
+        root0.setVgap(20) ;
+        root0.setHgap(0) ;
+
+        StackPane holder = new StackPane();
+        Canvas canvas = new Canvas(2000, 2000);
+
+        holder.getChildren().add(canvas);
+        root0.getChildren().add(holder);
+
+        holder.setStyle("-fx-background-color: CADETBLUE");
+      
+        
+        
+        
+        GridPane root2 = new GridPane();
+        root2.setAlignment(Pos.CENTER) ;
+        root2.setVgap(10) ;
+        root2.setHgap(10) ;
+        
+        
+        Text tex =new Text("**BILL**");
+        tex.setFont(Font.font(STYLESHEET_CASPIAN, FontWeight.EXTRA_BOLD, FontPosture.REGULAR, 60));
+        root2.add(tex, 4, 0);
+        TextField numm1 = new TextField();
+        root2.add(numm1,4,1);
+       
+        
+        
+        TextField numm2 = new TextField();
+        root2.add(numm2,4,2);
+         numm2.setEditable(false);
+        numm2.setMouseTransparent(true);
+        
+        TextField numm3 = new TextField();
+        root2.add(numm3,4,3);
+        numm3.setEditable(false);
+        numm3.setMouseTransparent(true);
+       
+        TextField numm4 = new TextField();
+        root2.add(numm4,4,4);
+        numm4.setEditable(false);
+        numm4.setMouseTransparent(true);
+       
+     
+        Label labelCost = new Label("MealCost :");
+        labelCost.setFont(Font.font(STYLESHEET_CASPIAN, FontWeight.BOLD, FontPosture.REGULAR, 15));
+        root2.add(labelCost,2,1);
+         Label labeltax = new Label("Tax :");
+        labeltax.setFont(Font.font(STYLESHEET_CASPIAN, FontWeight.BOLD, FontPosture.REGULAR, 15));
+        root2.add(labeltax,2,2);
+         Label labeltip = new Label("Tip :");
+        labeltip.setFont(Font.font(STYLESHEET_CASPIAN, FontWeight.BOLD, FontPosture.REGULAR, 15));
+        root2.add(labeltip,2,3);
+         Label labeltotal = new Label("TOTAL Bill :");
+        labeltotal.setFont(Font.font(STYLESHEET_CASPIAN, FontWeight.BOLD, FontPosture.REGULAR, 15));
+        root2.add(labeltotal,2,4);
+         
+        
+        
+        Button addBtnn = new Button();
+        Button exitBtn8 = new Button();
+        addBtnn.setText("Calculate");
+        exitBtn8.setText("Exit");
+        addBtnn.setMinSize(80, 20);
+        addBtnn.setMaxSize(80, 40);
+        exitBtn8.setMinSize(80,20);
+        exitBtn8.setMaxSize(80, 40);
+        root2.add(addBtnn,5,1);
+        root2.add(exitBtn8,4,6);
+        // String s;
+        addBtnn.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+               //DecimalFormat df = new DecimalFormat("0.0");
+              double mealCost;
+              double tax;
+              double tip;
+              double totalCost;
+              double totalBill;
+              mealCost = Double.parseDouble(numm1.getText());
+              bill.setMealCost(mealCost);
+              tax=bill.tax();
+              numm2.setText(Double.toString(tax)+"$");
+              tip=bill.tip();
+              numm3.setText(Double.toString(tip)+"$");
+              totalBill=bill.totalBill();
+              numm4.setText(Double.toString(totalBill)+"$");
+               
+                }
+        });
+        
+     
+      exitBtn8.setTextFill(Color.RED);
+        exitBtn8.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+            }
+        });
+         
+          
+        root2.setStyle("-fx-background-color:CADETBLUE");
+        Scene scene11 = new Scene(root2, 500, 500);
+        
