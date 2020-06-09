@@ -257,3 +257,244 @@ public class Restauranttt extends Application {
         root2.setStyle("-fx-background-color:CADETBLUE");
         Scene scene11 = new Scene(root2, 500, 500);
         
+        //__________________________________________________________________________________//     
+//menu
+        GridPane gp = new GridPane();
+        gp.setAlignment(Pos.CENTER) ;
+        gp.setVgap(5) ;
+        gp.setHgap(5) ;
+         
+        
+        Text menu = new Text("MENU");
+        menu.setFont(Font.font("Verdana", FontWeight.EXTRA_BOLD, FontPosture.REGULAR, 60));
+     // menu.setFontSmoothingType(FontSmoothingType.LCD);
+      menu.setFill(Color.CRIMSON);
+        gp.add(menu, 0, 0);
+        
+        Label label1 = new Label("FOOD:") ;
+        label1.setFont(Font.font(24));
+        label1.setStyle("-fx-text-fill: BEIGE;");
+        gp.add(label1,0,2);
+        
+        
+        Label lel3 = new Label("PRICES$$") ;
+        lel3.setFont(Font.font(24));
+         lel3.setStyle("-fx-text-fill: BEIGE;");
+        gp.add(lel3,3,0);
+        
+        
+        TextField field = new TextField();
+        gp.add(field,02,11);
+        field.setPrefSize(300, 100);
+        field.setMinSize(20, 20);
+        field.setEditable(false);  //ده بيخلينا منكتبش جوا التيكشت فيلد
+        field.setMouseTransparent(true);  // ده بيخلينا نعمل كوبي و المؤشر يجي ع الكلام اللي جوا التيكست فيلد لكن منقدرش نكتب
+        
+        Button b1 = new Button();
+        b1.setText("Grilled Salmon With Sauce");
+         b1.setMinSize(200, 20);
+        b1.setMaxSize(80, 40);
+        gp.add(b1,2,2);
+         Label l1 = new Label("80") ;
+        l1.setFont(Font.font(24));
+        gp.add(l1,3,2);
+        b1.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                double po;
+                po=Double.parseDouble(l1.getText());
+               //item =new Item(b1.getText(),label1.getText(),po);
+                 //  order.addOrder(item);
+                   order.names+="  "+"\r\n"+ b1.getText()  ;
+                   field.setText(order.names);
+            }});
+       
+        
+        
+        Button b2 = new Button();
+        b2.setText("Roast Beef With Vegetables");
+         b2.setMinSize(200, 20);
+        b2.setMaxSize(80, 40);
+        gp.add(b2,2,3);
+        b2.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                    order.names+="  "+"\r\n"+ b2.getText()  ;
+                   field.setText(order.names);
+            }});
+        Label l2 = new Label("100") ;
+        l2.setFont(Font.font(24));
+        gp.add(l2,3,3);
+        
+        
+        
+        
+        Button b3 = new Button();
+        b3.setText("Chiken And Mushroom Pie");
+         b3.setMinSize(200, 20);
+        b3.setMaxSize(80, 40);
+        gp.add(b3,2,4);
+         b3.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                   order.names+="  "+"\r\n"+ b3.getText()  ;
+                   field.setText(order.names);
+            }});
+         Label l3 = new Label("50") ;
+        l3.setFont(Font.font(24));
+        gp.add(l3,3,4);
+        
+        Button b4 = new Button();
+        b4.setText("Marrakesh Vegetarian Curry");
+         b4.setMinSize(200, 20);
+        b4.setMaxSize(80, 40);
+        gp.add(b4,2,5);
+         b4.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                   order.names+="  "+"\r\n"+ b4.getText()  ;
+                   field.setText(order.names);
+            }});
+        Label l4 = new Label("150") ;
+        l4.setFont(Font.font(24));
+        gp.add(l4,3,5);
+        
+        
+        
+        Label label2 = new Label("DRINK:") ;
+        label2.setFont(Font.font(24));
+        label2.setStyle("-fx-text-fill: BEIGE;");
+        
+        gp.add(label2,0,6);
+        
+        Button b5 = new Button();
+        b5.setText("Pepsi");
+         b5.setMinSize(200, 20);
+        b5.setMaxSize(80, 40);
+        gp.add(b5,2,7);
+        b5.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                   order.names+="  "+"\r\n"+ b5.getText()  ;
+                   field.setText(order.names);
+            }});
+        Label l5 = new Label("6") ;
+        l5.setFont(Font.font(24));
+        gp.add(l5,3,7);
+        
+        Button b6 = new Button();
+        b6.setText("Juice");
+         b6.setMinSize(200, 20);
+        b6.setMaxSize(80, 40);
+        gp.add(b6,2,8);
+        b6.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                   order.names+="  "+  "\r\n"+ b6.getText()  ;
+                   field.setText(order.names);
+            }});
+        Label l6 = new Label("20") ;
+        l6.setFont(Font.font(24));
+        gp.add(l6,3,8);
+        
+        Button b7 = new Button();
+        b7.setText("Tea");
+         b7.setMinSize(200, 20);
+        b7.setMaxSize(80, 40);
+        gp.add(b7,2,9);
+        b7.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                   order.names+="  "+"\r\n"+ b7.getText();
+                   field.setText(order.names);
+            }});
+        Label l7 = new Label("10") ;
+        l7.setFont(Font.font(24));
+        gp.add(l7,3,9);
+        
+        Button b8 = new Button();
+        b8.setText("Coffee");
+         b8.setMinSize(200, 20);
+        b8.setMaxSize(80, 40);
+        gp.add(b8,2,10);
+        b8.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                   order.names+="  "+"\r\n"+ b8.getText()  ;
+                   field.setText(order.names);
+            }});
+        Label l8 = new Label("15") ;
+        l8.setFont(Font.font(24));
+        gp.add(l8,3,10);
+        
+            
+        Button check = new Button("Make Order") ;
+        GridPane.setConstraints( check , 0 , 20 ) ;
+        check.setMinSize(100, 20);
+        check.setMaxSize(80, 40);
+        check.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  if(field.getText()!= null){
+                  primaryStage.setScene(scene11);
+                  primaryStage.show();
+                  }else
+                  {
+                      field.setText("PLEASE ENTER THE RDER");
+                  }
+                  field.setText("");
+            }
+        });
+        
+               
+        Button cancel = new Button("Cancel Order") ;
+        GridPane.setConstraints( cancel , 2, 20 ) ;
+        cancel.setMinSize(100, 20);
+        cancel.setMaxSize(80, 40);
+        cancel.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                 field.setText("");
+                  primaryStage.setScene(addCus_scene);
+                  primaryStage.show();
+            }
+        });
+        
+        
+        
+        Button exitBtn99 = new Button("Exit");
+        GridPane.setConstraints( exitBtn99 , 3 , 20 ) ;
+        exitBtn99.setMinSize(100, 20);
+        exitBtn99.setMaxSize(80, 40);
+       // exitBtn99.setStyle(STYLESHEET_MODENA);
+       exitBtn99.setTextFill(Color.RED);
+        exitBtn99.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+            }
+        });
+            
+            
+           
+            //layout.setTop(menubar) ;
+           gp.getChildren().add(exitBtn99);
+           gp.getChildren().add(check);
+           gp.getChildren().add(cancel);
+           gp.setStyle("-fx-background-color:CADETBLUE");
+            Scene scene8 = new Scene( gp , 650 , 650 ) ;
+            
+         //////////////////////////////////////// 
+         Button backbtn5 = new Button();
+           backbtn5.setText("Back->") ;
+         backbtn5.setMinSize(100, 20);
+         backbtn5.setMaxSize(80, 40);
+         backbtn5.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         backbtn5.setOnAction(new EventHandler<ActionEvent>(){
+         @Override
+         public void handle(ActionEvent e) {
+         primaryStage.setScene(scene0);
+         }
+         });
+         gp.add(backbtn5, 3, 21);
+         /////////////////////////////////////////
