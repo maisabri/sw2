@@ -87,3 +87,43 @@ public class Restauranttt extends Application {
         windowE.setScene(scel);
         windowE.show();
         
+               
+        //Customers Table Columns
+        TableColumn<Customer, String> id2Column = new TableColumn<>("ID");
+        id2Column.setMinWidth(100);
+        id2Column.setCellValueFactory(new PropertyValueFactory<>("id"));
+        
+        TableColumn<Customer, String> name2Column = new TableColumn<>("Name");
+        name2Column.setMinWidth(200);
+        name2Column.setCellValueFactory(new PropertyValueFactory<>("name"));
+        
+        //Customers Tableview
+        table1 = new TableView<>();
+        
+        table1.getColumns().addAll(name2Column, id2Column);
+        
+      
+        VBox vcBox = new VBox();
+        vcBox.getChildren().addAll(table1);
+    
+        Scene sce2 = new Scene(vcBox);
+        windowC.setScene(sce2);
+        windowC.show();
+   
+        
+         GridPane grid1 = new GridPane();
+         GridPane root0 = new GridPane();
+         Scene scene0 = new Scene(root0,500,500);
+         
+         GridPane addCus_grid = new GridPane() ;
+         Scene addCus_scene = new Scene( addCus_grid , 400 , 500 ) ;
+         
+          GridPane grid2 = new GridPane() ;
+        Scene scene2 = new Scene( grid2 , 400 , 500 ) ;
+        
+         GridPane grid22 = new GridPane() ;
+         Scene scene9 = new Scene( grid22 , 400 , 500 ) ;
+         
+         GridPane root= new GridPane();
+        Scene scene = new Scene(root, 500, 500);  
+ //___________________________________________________________________________________________________
