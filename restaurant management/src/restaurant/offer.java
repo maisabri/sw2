@@ -2,11 +2,9 @@ package restaurant;
 import java.util.Scanner;
 public class Offer {
 
-
     double oldprice ;
     double disc ;
     double newprice ;
-
 
     public void discount()
     {
