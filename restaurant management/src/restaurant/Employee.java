@@ -5,17 +5,14 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 
-
-
-
 public class Employee extends User implements Interface1{
   
 	EmployeeFile e;
 	Customer c;
 	Menu u;
-    private final ArrayList<Customer> customerList =new ArrayList<>();
-    public final ArrayList<File> file =new ArrayList<>();
-    static int i=0;
+        private final ArrayList<Customer> customerList =new ArrayList<>();
+        public final ArrayList<File> file =new ArrayList<>();
+        static int i=0;
 
     
         //function add customer and create profile to this customer//
