@@ -98,4 +98,47 @@ public class Admin {
     		  System.err.println("can't do this operation");
 		}
      }
+	  
+	   String search(int id) {
+
+    	try {
+    	      EmployeeFile a=employeelist.get(id);
+    	       return "the employee you're searching for is : "+a.name + "\n"+id;}
+    	catch(IndexOutOfBoundsException e) {
+    		 return "can't find the employee";}
+    }
+
+     void update(int id,String name,int age, int workinghours,double salary) {
+    	 try {
+    		 File a=new File("employee"+ id + ".txt");
+    	  Writer fileWriter= new FileWriter(a);
+  	    BufferedWriter pw= new BufferedWriter(fileWriter);
+  	    pw.write("employee's name : " + name +"\r\n" + "employee's ID : "+ i+"\r\n" +"employee's age : " + age  +"\r\n"+ "your work hours : "+ workinghours + "\r\n" + "your salary is : " + salary + "\r\n");
+   	      file.set(id,a);
+   	      pw.close();
+   	      EmployeeFile b=new EmployeeFile(name,age,workinghours,salary);
+   	      employeelist.set(id, b);
+    	 }
+    	  catch(IndexOutOfBoundsException e) {
+    		  System.err.println("can't find the employee");
+    	  } catch (IOException e) {
+    		  System.err.println("can't do this operation");
+		}
+     }
+
+    int employeecount() {
+         return employeelist.size() ;
+    }
+
+    String reportEmployees(int salary1) {
+    	String all="employees with this salary is:\n";
+    	for(int i=0; i<employeelist.size(); i++) {
+    		EmployeeFile a=employeelist.get(i);
+    		if(a.salary==salary1) {
+    			all+=a.name+"\n";
+    		}
+    	}
+    		return all;
+    }
+	  
 }
