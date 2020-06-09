@@ -1,3 +1,4 @@
+package restaurant;
 public interface Interface1 {
    
 	interface forEmployee{
@@ -9,6 +10,22 @@ public interface Interface1 {
 		 public int getNumber();
 		 public void increamentNo();
 		 public String toString();
-		
-		
+		 public double tax();
+		 public double tip();
+		 public double totalBill();
+		 public String displayFood();
+		 public String displayDrinks();
+		 public int searchFood(String name);
+		 public int searchDrink(String name);
+		 public void discount();
+		 public void newprice();
+		 public double Fgetprice(int i);
+		 public double Dgetprice(int i);
+                 public void setMealCost(double mealCost);
+
+
+
+
 	}
+		
+}
