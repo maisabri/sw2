@@ -8,7 +8,56 @@ import java.util.ArrayList;
 public class Menu {
     private final ArrayList<Item> food=new ArrayList<>();
     private final ArrayList<Item> drinks=new ArrayList<>();
-
+	
+    public Menu() {
+        	write_file_DRINK();
+        	write_file_food();
+        }
+        
+    public void write_file_DRINK(){    
+            String f = "drink.txt";
+             
+            try
+            {
+            FileWriter fw=new FileWriter(f);
+            BufferedWriter bw = new BufferedWriter (fw);
+            drinks.add(new Item("Pepsi","drink",7));
+            drinks.add(new Item("Juice","drinks",10));
+            drinks.add(new Item("Tea","drink",5));
+            drinks.add(new Item("Coffee","drink",8));
+           
+           for (Item line : drinks) {
+               bw.write (line +"");
+               bw.newLine(); } 
+               bw.close();
+               }
+            catch(IOException e) {
+            	System.err.println("can't do this operation");
+            }
+   }
+   
+   
+   public void write_file_food(){
+       
+    String FNAME = "food.txt";
+  
+       try {
+    	    FileWriter fw=new FileWriter(FNAME); 
+    	   BufferedWriter bw = new BufferedWriter (fw);
+           food.add(new Item("Grilled Salmon With Sauce","food",200));
+           food.add(new Item("Roast Beef With Vegetables","food",150));
+           food.add(new Item("Chiken And Mushroom Pie","food",120));
+           food.add(new Item("Marrakesh Vegetarian Curry","food",100));
+           
+           for (Item line : food) {
+               bw.write (line +"");
+               bw.newLine();} 
+               bw.close();
+                }
+       catch(IOException e) {
+       	System.err.println("can't do this operation");
+       }
+   }
     public String displayFood() {
  	   String menu1=" ";
  	   menu1+= "Food Menu : \n";
