@@ -768,7 +768,160 @@ public class Restauranttt extends Application {
          }
          });
          grid.add(backbtn2, 4, 8);
-         ///////////////////////////////////////// 
-         
+         /////////////////////////////////////////   
 //__________________________________________________________________________________//     
+        //buttons
+
+        grid2.setAlignment(Pos.CENTER) ;
+        grid2.setVgap(15) ;
+        grid2.setHgap(10) ;
         
+        
+        Button btn1 = new Button("Add Employee") ;
+        GridPane.setConstraints( btn1 , 0 , 1 ) ;
+        btn1.setMinSize(150, 20);
+        btn1.setMaxSize(80, 40);
+        btn1.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        btn1.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene3) ;
+                primaryStage.show();
+            }
+        });
+        
+        Button btn2 = new Button("Search Employee");
+        GridPane.setConstraints(btn2, 0, 2);
+        btn2.setMinSize(150, 20);
+        btn2.setMaxSize(80, 40);
+        btn2.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        btn2.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene5) ;
+                primaryStage.show();
+            }
+        });
+        
+        Button btn3 = new Button("Add Customer") ;
+        GridPane.setConstraints( btn3 , 0 , 3 ) ;
+        btn3.setMinSize(150, 20);
+        btn3.setMaxSize(80, 40);
+        btn3.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        btn3.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(addCus_scene) ;
+                primaryStage.show();
+            }
+        });
+        
+        Button btn4 = new Button("Search Customer");
+        GridPane.setConstraints(btn4, 0, 4);
+        btn4.setMinSize(150, 20);
+        btn4.setMaxSize(80, 40);
+        btn4.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        btn4.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene7) ;
+                primaryStage.show();
+            }
+        });
+        
+        
+        
+        Button btn5 = new Button("Menu");
+        GridPane.setConstraints(btn5, 0, 5);
+        btn5.setMinSize(150, 20);
+        btn5.setMaxSize(80, 40);
+        btn5.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         btn5.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene8) ;
+                primaryStage.show();
+            }
+        });
+         
+         
+         Button btn6 = new Button("Employee List");
+        GridPane.setConstraints(btn6, 0, 6);
+        btn6.setMinSize(150, 20);
+        btn6.setMaxSize(80, 40);
+        btn6.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        grid2.add(btn6, 0,6);
+        btn6.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+               primaryStage.setScene(scel) ;
+               primaryStage.show();
+            }
+        });
+        
+        
+          Button btn7 = new Button("Customer List");
+        GridPane.setConstraints(btn7, 0, 7);
+        btn7.setMinSize(150, 20);
+        btn7.setMaxSize(80, 40);
+        btn7.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        grid2.add(btn7, 0,7);
+        btn7.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+               primaryStage.setScene(sce2) ;
+               primaryStage.show();
+            }
+        });
+
+        Button logout = new Button("Logout");
+        logout.setText("Logout") ;
+        logout.setMinSize(150, 20);
+        logout.setMaxSize(80, 40);
+        GridPane.setConstraints(logout, 0, 8);
+        logout.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        logout.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  primaryStage.setScene(scene0);
+            }
+        });
+        
+        Button exitBtn1 = new Button("Exit");
+        exitBtn1.setText("Exit") ;
+        exitBtn1.setMinSize(150, 20);
+        exitBtn1.setMaxSize(80, 40);
+        GridPane.setConstraints(exitBtn1, 0, 10);
+        exitBtn1.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        exitBtn1.setTextFill(Color.RED);
+        exitBtn1.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+            }
+        });
+        
+        grid2.getChildren().addAll( btn1 , btn2 , btn3 , btn4 , btn5,exitBtn1 ,logout);
+        grid2.setStyle("-fx-background-color:CADETBLUE");
+        
+            //////////////////////////////////////// 
+         Button backbtn6 = new Button();
+         backbtn6.setText("Back->") ;
+         backbtn6.setMinSize(150, 20);
+         backbtn6.setMaxSize(80, 40);
+         backbtn6.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         backbtn6.setOnAction(new EventHandler<ActionEvent>(){
+         @Override
+         public void handle(ActionEvent e) {
+         primaryStage.setScene(scene);
+         }
+         });
+         grid2.add(backbtn6, 0,9);
+         /////////////////////////////////////////
+        
+        //__________________________________________________________________________________// 
