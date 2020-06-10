@@ -988,8 +988,6 @@ public class Restauranttt extends Application {
         
         grid22.getChildren().addAll(  btn33 , btn44 , btn55,exitBtn6 );
         grid22.setStyle("-fx-background-color:CADETBLUE");
-
-       
         
             //////////////////////////////////////// 
          Button backbtn8 = new Button();
@@ -1006,3 +1004,154 @@ public class Restauranttt extends Application {
          grid22.add(backbtn8, 0,6);
          /////////////////////////////////////////   
 //__________________________________________________________________________________//        
+//login        
+                                      
+        root.setAlignment(Pos.CENTER);
+        root.setVgap(10);
+        root.setHgap(10);
+        root.setPadding(javafx.geometry.Insets.EMPTY); //Ù…Ø´ Ø¹Ø§Ø±Ù�Ø© Ø§Ø¹Ù…Ù„Ù‡ Ø²ÙŠ Ø§Ù„Ù�ÙŠØ¯ÙŠÙˆ
+       // Color colorForBackground = Color.rgb(200,200,200,1);
+        
+        Text welcometxt = new Text("WELCOME");
+        welcometxt.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
+        root.add(welcometxt, 0, 0);
+
+        Label labelUserName = new Label("Name :");
+        labelUserName.setFont(Font.font("tahoms", FontWeight.LIGHT, FontPosture.REGULAR, 25));
+        root.add(labelUserName,0,1);
+        TextField  TextUserName= new TextField ();
+        TextUserName.setPromptText("UserName");
+        root.add(TextUserName,1,1);
+        //user.username=TextUserName.getText();
+       
+       
+        Label labelPassWord = new Label("Password :");
+        labelPassWord.setFont(Font.font("tahoms", FontWeight.LIGHT, FontPosture.REGULAR, 25));
+        root.add(labelPassWord,0,2);
+        PasswordField  PassWordField= new PasswordField ();
+        PassWordField.setPromptText("Password");
+        root.add(PassWordField,1,2);
+        //user.password=PassWordField.getText();
+       
+        Button loginBtn = new Button();
+        loginBtn.setText("Login");
+        loginBtn.setMinSize(80, 20);
+        loginBtn.setMaxSize(80, 40);
+        loginBtn.setFont(Font.font("Sanserif", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR, 15));
+        loginBtn.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                 
+               if( user.login(TextUserName.getText(), PassWordField.getText())){
+                 
+                primaryStage.setScene(scene2) ;
+                primaryStage.show();
+                PassWordField.clear();
+                TextUserName.clear();
+               }else{
+                   TextUserName.setStyle(" -fx-border-color: red;");
+                   PassWordField.setStyle("-fx-border-color: red;");
+                  }
+            }
+        });
+       
+         root.add(loginBtn,1,3);
+
+        Button exitBtn = new Button("Exit");
+        exitBtn.setText("Exit ") ;
+        exitBtn.setMinSize(80, 20);
+        exitBtn.setMaxSize(80, 40);
+        exitBtn.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        exitBtn.setTextFill(Color.RED);
+        exitBtn.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+                  
+            }
+        });
+         root.add(exitBtn, 2, 3);
+         root.setStyle("-fx-background-color:CADETBLUE");
+
+           //////////////////////////////////////// 
+         Button backbtn9 = new Button();
+         backbtn9.setText("Back->") ;
+         backbtn9.setMinSize(80, 20);
+         backbtn9.setMaxSize(80, 40);
+         backbtn9.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         backbtn9.setOnAction(new EventHandler<ActionEvent>(){
+         @Override
+         public void handle(ActionEvent e) {
+         primaryStage.setScene(scene0);
+         }
+         });
+         root.add(backbtn9, 2,4);
+         /////////////////////////////////////////
+        //_______________________________________________________________________________________________________
+
+        grid1.setAlignment(Pos.CENTER);
+        grid1.setVgap(0);
+        grid1.setHgap(0);
+        grid1.setPadding(javafx.geometry.Insets.EMPTY);
+        Text text = new Text();
+        text.setText("FCIH-Restaurant");
+        text.getFontSmoothingType();
+        text.setFont(Font.font("tahoms", FontWeight.EXTRA_BOLD, FontPosture.REGULAR,25 ));
+        grid1.add(text,1,0);
+        
+        Button exitBtn10 = new Button("Exit");
+        exitBtn10.setText("Exit ") ;
+        exitBtn10.setMinSize(200, 100);
+        exitBtn10.setMaxSize(80, 40);
+        exitBtn10.setFont(Font.font("tahoms", FontWeight.EXTRA_BOLD, FontPosture.REGULAR,30 ));
+        exitBtn10.setTextFill(Color.RED);
+        exitBtn10.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+            }
+        });
+         grid1.add(exitBtn10, 1, 3);
+         
+         
+        Button emp = new Button("customer");
+        emp.setMinSize(200, 100);
+        emp.setMaxSize(80, 40);
+        emp.setFont(Font.font("tahoms", FontWeight.EXTRA_BOLD, FontPosture.REGULAR,30 ));
+        emp.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  primaryStage.setScene(scene9);
+                  primaryStage.show();
+            }
+        });
+        
+        
+        Button admin = new Button("ADMIN");
+        admin.setMinSize(200, 100);
+        admin.setMaxSize(80, 40);
+        admin.setFont(Font.font("tahoms", FontWeight.EXTRA_BOLD, FontPosture.REGULAR,30 ));
+        admin.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  primaryStage.setScene(scene);
+                  primaryStage.show();
+            }
+        });       
+        grid1.add(emp,1,1);
+        grid1.add(admin,1,2);
+        root0.getChildren().add(grid1);
+        
+    
+        primaryStage.setTitle("FCIH-Restaurant");
+        primaryStage.setScene(scene0);
+        primaryStage.show();
+        
+    }
+    
+    public static void main(String[] args) {
+        launch(args);
+    } 
+}
+
