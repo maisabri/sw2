@@ -545,16 +545,12 @@ public class Restauranttt extends Application {
         addCus_grid.setAlignment(Pos.CENTER) ;
         addCus_grid.setVgap(20) ;
         addCus_grid.setHgap(0) ;
-        
-        
-        
+
         Label name3 = new Label("Name : ") ;
         GridPane.setConstraints( name3 , 0 , 1 ) ;
         
         TextField txt6 = new TextField() ;
         GridPane.setConstraints( txt6 , 3 , 1 ) ;
-      //  c.name=txt6.getText();
-        
         
         Label id0 = new Label("ID : ") ;
         GridPane.setConstraints( id0 , 0 , 2 ) ;
@@ -687,3 +683,92 @@ public class Restauranttt extends Application {
          grid3.add(backbtn4, 4, 4);
          ///////////////////////////////////////// 
 //__________________________________________________________________________________//
+ //add  emp     
+        GridPane grid = new GridPane() ;
+        grid.setAlignment(Pos.CENTER) ;
+        grid.setVgap(20) ;
+        grid.setHgap(0) ;
+        Label name = new Label("Name : ") ;
+        GridPane.setConstraints( name , 0 , 1 ) ;
+        
+        TextField txt = new TextField() ;
+        GridPane.setConstraints( txt , 3 , 1 ) ;
+        
+        
+        Label id2 = new Label("UserName : ") ;
+        GridPane.setConstraints( id2 , 0 , 2 ) ;
+        
+        TextField txt1 = new TextField() ;
+        GridPane.setConstraints( txt1 , 3 , 2 ) ;
+        adminn.username=txt1.getText();
+        
+        
+        Label age = new Label("Age : ") ;
+        GridPane.setConstraints( age , 0 , 3 ) ;
+        
+        TextField txt3 = new TextField() ;
+        GridPane.setConstraints( txt3 , 3 , 3 ) ;
+        
+        Label salary = new Label("Salary : ") ;
+        GridPane.setConstraints( salary , 0 , 4 ) ;
+        
+        TextField salary2 = new TextField() ;
+        GridPane.setConstraints( salary2 , 3 , 4 ) ;
+        
+        
+        
+        Label work = new Label("WorkingHours : ") ;
+        GridPane.setConstraints( work , 0 , 5 ) ;
+        
+        TextField txt4 = new TextField() ;
+        GridPane.setConstraints( txt4 , 3 , 5 ) ;
+        
+        
+        Button btn = new Button("Add Employee") ;
+        GridPane.setConstraints( btn , 0 , 7 ) ;
+        btn.setMinSize(100, 20);
+        btn.setMaxSize(80, 40);
+        btn.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  adminn.addEmployee(txt.getText(), Integer.parseInt(txt3.getText()), Integer.parseInt(txt4.getText()) , Double.parseDouble(txt4.getText()));
+                  Text tx= new Text("SAVED SUCCESSFUL");
+                  grid.add(tx, 0, 8);
+                 ;
+            }
+        });
+        grid.getChildren().addAll( name , id2 , age , salary , btn , txt , txt1 , txt3 , txt4, work,salary2 );
+        
+       Scene scene3 = new Scene( grid , 500 , 500  ) ;
+        Button exitBtn2 = new Button("Exit");
+        exitBtn2.setMinSize(100, 20);
+        exitBtn2.setMaxSize(80, 40);
+        exitBtn2.setText("Exit") ;
+        exitBtn2.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        exitBtn2.setTextFill(Color.RED);
+        exitBtn2.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+            }
+        });
+         grid.add(exitBtn2,4, 7);
+         grid.setStyle("-fx-background-color:CADETBLUE");
+         
+           //////////////////////////////////////// 
+         Button backbtn2 = new Button();
+         backbtn2.setText("Back-> ") ;
+         backbtn2.setMinSize(100, 20);
+         backbtn2.setMaxSize(80, 40);
+         backbtn2.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         backbtn2.setOnAction(new EventHandler<ActionEvent>(){
+         @Override
+         public void handle(ActionEvent e) {
+         primaryStage.setScene(scene2);
+         }
+         });
+         grid.add(backbtn2, 4, 8);
+         ///////////////////////////////////////// 
+         
+//__________________________________________________________________________________//     
+        
