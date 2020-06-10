@@ -610,4 +610,80 @@ public class Restauranttt extends Application {
          /////////////////////////////////////////
   
 //__________________________________________________________________________________// 
+        //search emp
+        GridPane grid3 = new GridPane() ;
+        grid3.setAlignment(Pos.CENTER) ;
+        grid3.setVgap(10) ;
+        grid3.setHgap(10) ;
         
+        Label emp_id = new Label("ID : ") ;
+        GridPane.setConstraints( emp_id , 2 , 2 ) ;
+        emp_id.setFont(Font.font("tahoms", FontWeight.SEMI_BOLD, FontPosture.REGULAR,15 ));
+        
+        TextField txt0 = new TextField() ;
+        GridPane.setConstraints( txt0 , 3 , 2 ) ;
+        txt0.setPromptText("Write an ID Here...");
+        
+        TextField txi = new TextField() ;
+        GridPane.setConstraints( txi , 3 , 3 ) ;
+        txi.setMinSize(100, 20);
+        txi.setEditable(false);
+        txi.setMouseTransparent(true);
+        
+        
+        Button delbtn = new Button("Delete") ;
+        GridPane.setConstraints( delbtn , 4, 3 ) ;
+        delbtn.setMinSize(100, 20);
+        delbtn.setMaxSize(80, 40);
+        delbtn.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  txt0.clear();
+                  txi.clear();
+            }
+        });
+        Button empsearch = new Button("Search") ;
+        GridPane.setConstraints( empsearch , 4 , 2 ) ;
+        empsearch.setMinSize(100, 20);
+        empsearch.setMaxSize(80, 40);
+        empsearch.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                 String s9 = adminn.search(Integer.parseInt(txt0.getText()));
+                 txi.setText(s9);
+            }
+        });
+        
+        Button exitBtn3 = new Button("Exit");
+        GridPane.setConstraints( exitBtn3 , 4 , 5 ) ;
+        exitBtn3.setMinSize(100, 20);
+        exitBtn3.setMaxSize(80, 40);
+        exitBtn3.setTextFill(Color.RED);
+        exitBtn3.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+            }
+        });
+        
+        
+       // GridPane.setConstraints( exitBtn3 , 1 , 4 );
+        grid3.getChildren().addAll( emp_id , delbtn , exitBtn3 , txt0,empsearch,txi );
+        grid3.setStyle("-fx-background-color:CADETBLUE");
+        Scene scene5 = new Scene( grid3 , 500 , 500 ) ;
+        
+         //////////////////////////////////////// 
+         Button backbtn4 = new Button();
+         backbtn4.setText("Back->") ;
+         backbtn4.setMinSize(100, 20);
+         backbtn4.setMaxSize(80, 40);
+         backbtn4.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         backbtn4.setOnAction(new EventHandler<ActionEvent>(){
+         @Override
+         public void handle(ActionEvent e) {
+         primaryStage.setScene(scene9);
+         }
+         });
+         grid3.add(backbtn4, 4, 4);
+         ///////////////////////////////////////// 
+//__________________________________________________________________________________//
