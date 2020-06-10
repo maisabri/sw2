@@ -923,5 +923,86 @@ public class Restauranttt extends Application {
          });
          grid2.add(backbtn6, 0,9);
          /////////////////////////////////////////
-        
         //__________________________________________________________________________________// 
+        //buttons2
+
+        grid22.setAlignment(Pos.CENTER) ;
+        grid22.setVgap(15) ;
+        grid22.setHgap(10) ;
+        
+        Button btn33 = new Button("Add Customer") ;
+        GridPane.setConstraints( btn33 , 0 , 3 ) ;
+        btn33.setMinSize(150, 20);
+        btn33.setMaxSize(80, 40);
+        btn33.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        btn33.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(addCus_scene) ;
+                primaryStage.show();
+            }
+        });
+        
+        Button btn44 = new Button("Search Customer");
+        GridPane.setConstraints(btn44, 0, 4);
+        btn44.setMinSize(150, 20);
+        btn44.setMaxSize(80, 40);
+        btn44.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        btn44.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene7) ;
+                primaryStage.show();
+            }
+        });
+
+        Button btn55 = new Button("Menu");
+        GridPane.setConstraints(btn55, 0, 5);
+        btn55.setMinSize(150, 20);
+        btn55.setMaxSize(80, 40);
+        btn55.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         btn55.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene8) ;
+                primaryStage.show();
+            }
+        });
+        
+        Button exitBtn6 = new Button("Exit");
+        exitBtn6.setText("Exit") ;
+        exitBtn6.setMinSize(150, 20);
+        exitBtn6.setMaxSize(80, 40);
+        GridPane.setConstraints(exitBtn6, 0, 7);
+        exitBtn6.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+        exitBtn6.setTextFill(Color.RED);
+        exitBtn6.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+            }
+        });
+        
+        grid22.getChildren().addAll(  btn33 , btn44 , btn55,exitBtn6 );
+        grid22.setStyle("-fx-background-color:CADETBLUE");
+
+       
+        
+            //////////////////////////////////////// 
+         Button backbtn8 = new Button();
+         backbtn8.setText("Back->") ;
+         backbtn8.setMinSize(150, 20);
+         backbtn8.setMaxSize(80, 40);
+         backbtn8.setFont(Font.font("tahoms", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         backbtn8.setOnAction(new EventHandler<ActionEvent>(){
+         @Override
+         public void handle(ActionEvent e) {
+         primaryStage.setScene(scene0);
+         }
+         });
+         grid22.add(backbtn8, 0,6);
+         /////////////////////////////////////////   
+//__________________________________________________________________________________//        
