@@ -526,4 +526,88 @@ public class Restauranttt extends Application {
         grid5.setStyle("-fx-background-color:CADETBLUE");
        Scene scene7 = new Scene( grid5 , 400 , 500 ) ;  
  //////////////////////////////////////// 
+          Button backbtn3 = new Button();
+         backbtn3.setText("Back->") ;
+         backbtn3.setMinSize(100, 20);
+         backbtn3.setMaxSize(80, 40);
+         backbtn3.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         backbtn3.setOnAction(new EventHandler<ActionEvent>(){
+         @Override
+         public void handle(ActionEvent e) {
+         primaryStage.setScene(scene9);
+         }
+         });
+         grid5.add(backbtn3, 4, 4);
+         /////////////////////////////////////////
+//__________________________________________________________________________________//     
+//add customer
+        
+        addCus_grid.setAlignment(Pos.CENTER) ;
+        addCus_grid.setVgap(20) ;
+        addCus_grid.setHgap(0) ;
+        
+        
+        
+        Label name3 = new Label("Name : ") ;
+        GridPane.setConstraints( name3 , 0 , 1 ) ;
+        
+        TextField txt6 = new TextField() ;
+        GridPane.setConstraints( txt6 , 3 , 1 ) ;
+      //  c.name=txt6.getText();
+        
+        
+        Label id0 = new Label("ID : ") ;
+        GridPane.setConstraints( id0 , 0 , 2 ) ;
+        
+        
+        TextField id3 = new TextField() ;
+        GridPane.setConstraints( id3 , 3 , 2 ) ;   
+  
+        Button addbtn2 = new Button("Add Customer") ;
+        GridPane.setConstraints( addbtn2 , 0 , 4 ) ;
+        addbtn2.setMinSize(100, 20);
+        addbtn2.setMaxSize(80, 40);
+        addbtn2.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                employee.addCustomer(txt6.getText());
+                primaryStage.setScene(scene8);
+                primaryStage.show();
+            }
+        });
+        
+        
+        Button exitBtn4 = new Button("Exit");
+        GridPane.setConstraints( exitBtn4 , 4 , 4 ) ;
+        exitBtn4.setMinSize(100, 20);
+        exitBtn4.setMaxSize(80, 40);
+        exitBtn4.setTextFill(Color.RED);
+        exitBtn4.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                  Platform.exit();
+            }
+        });
+        
+        
+        addCus_grid.getChildren().addAll( name3 , id0, addbtn2 , txt6 , id3 ,exitBtn4 );
+        addCus_grid.setStyle("-fx-background-color:CADETBLUE");
+        
+        
+         //////////////////////////////////////// 
+         Button backbtn = new Button();
+         backbtn.setText("Back-> ") ;
+         backbtn.setMinSize(100, 20);
+         backbtn.setMaxSize(80, 40);
+         backbtn.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, FontPosture.REGULAR,15 ));
+         backbtn.setOnAction(new EventHandler<ActionEvent>(){
+         @Override
+         public void handle(ActionEvent e) {
+         primaryStage.setScene(scene9);
+         }
+         });
+         addCus_grid.add(backbtn, 4, 5);
+         /////////////////////////////////////////
+  
+//__________________________________________________________________________________// 
         
